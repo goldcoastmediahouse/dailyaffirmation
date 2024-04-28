@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Affirmation Widget</title>
+    <style>
+        body {
+            font-family: 'Baskerville', serif;
+            text-align: center;
+            background-color: white;
+            color: black;
+            padding: 20px;
+            width: 200px; /* Adjust width as needed */
+            height: 200px; /* Adjust height as needed */
+            border: 2px solid black;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #affirmation {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="affirmation"></div>
+
+    <script>
+        // List of daily affirmations
+        const affirmations = [
+            "I love and accept myself unconditionally.",
+            "I am worthy of love and happiness.",
+            "I believe in myself and my abilities.",
+            "I am at peace with who I am.",
+            "I am capable of achieving my dreams.",
+            "I radiate positivity and joy.",
+            "I am grateful for my life and experiences.",
+            "I deserve all the good things that come my way.",
+            "I am enough just as I am.",
+            "I trust in the process of life.",
+            "I am confident and strong in all that I do.",
+            "I am surrounded by love and kindness.",
+            "I embrace my imperfections as opportunities for growth.",
+            "I forgive myself for any mistakes and learn from them.",
+            "I attract positivity and abundance into my life.",
+            "I am becoming a better version of myself every day.",
+            "I am open to new adventures and experiences.",
+            "I am in control of my thoughts and emotions.",
+            "I am resilient and can overcome any challenge.",
+            "I am aligned with my true purpose in life.",
+            "I am a beacon of light and hope for others.",
+            "I deserve success and will achieve it.",
+            "I am filled with courage to face my fears.",
+            "I am constantly evolving and improving.",
+            "I honor my unique talents and abilities.",
+            "I choose happiness and joy in every moment.",
+            "I am deserving of all the good things life has to offer.",
+            "I am surrounded by supportive and loving people.",
+            "I am worthy of respect and admiration.",
+            "I am free to create the life I desire.",
+            "I am a magnet for positive energy.",
+            "I am optimistic and see the bright side of every situation.",
+            "I am connected to the wisdom of the universe.",
+            "I radiate confidence, self-respect, and inner harmony.",
+            "I am at peace with all that has happened, is happening, and will happen.",
+            "I release all doubts and embrace certainty and clarity.",
+            "I am resilient, strong, and brave in the face of challenges.",
+            "I deserve to take up space and be seen and heard.",
+            "I am deserving of my dreams and will achieve them.",
+            "I am grateful for the lessons life teaches me.",
+            "I am aligned with the energy of abundance.",
+            "I am a source of positivity and inspiration to others.",
+            "I am worthy of love and affection.",
+            "I am constantly evolving and adapting to change.",
+            "I trust in the divine timing of my life's journey.",
+            "I am attracting miracles into my life.",
+            "I am grateful for my body and treat it with kindness and respect.",
+            "I am in tune with my intuition and trust my inner wisdom.",
+            "I am empowered to create the life I desire.",
+            "I am the architect of my life; I build its foundation and choose its contents.",
+            "I am open to receiving all the blessings life has to offer.",
+            "I am surrounded by abundance and prosperity.",
+            "I am deserving of success in all areas of my life.",
+            "I am a magnet for positive opportunities and experiences."
+        ];
+
+        // Function to display today's affirmation
+        function displayDailyAffirmation() {
+            const date = new Date();
+            const dayOfYear = getDayOfYear(date);
+            const index = dayOfYear % affirmations.length;
+            document.getElementById('affirmation').textContent = affirmations[index];
+        }
+
+        // Function to calculate the day of the year (1 to 365/366)
+        function getDayOfYear(date) {
+            const start = new Date(date.getFullYear(), 0, 0);
+            const diff = (date - start) + ((start.getTimezoneOffset() - date.getTimezoneOffset()) * 60 * 1000);
+            const oneDay = 1000 * 60 * 60 * 24;
+            return Math.floor(diff / oneDay);
+        }
+
+        // Cal
