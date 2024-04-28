@@ -8,12 +8,12 @@
         body {
             font-family: 'Baskerville', serif;
             text-align: center;
-            background-color: white;
-            color: black;
+            background-color: black; /* Change background color to black */
+            color: white; /* Change text color to white */
             padding: 20px;
             width: 200px; /* Adjust width as needed */
             height: 200px; /* Adjust height as needed */
-            border: 2px solid black;
+            border: 2px solid white; /* Add white border */
             border-radius: 8px;
             display: flex;
             justify-content: center;
@@ -21,6 +21,7 @@
         }
         #affirmation {
             font-size: 18px;
+            line-height: 1.4; /* Increase line height for better readability */
         }
     </style>
 </head>
@@ -102,4 +103,8 @@
             return Math.floor(diff / oneDay);
         }
 
-        // Cal
+        // Call the function to display today's affirmation
+        displayDailyAffirmation();
+    </script>
+</body>
+</html>
